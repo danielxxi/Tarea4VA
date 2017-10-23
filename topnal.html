@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <style>
+
+path.link {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+path.link.cien {
+  stroke: green;
+  stroke-width: 2.5;
+  opacity: 1.5;
+}
+
+path.link.ochenta {
+  stroke: blue;
+  opacity: 2.0;
+}
+
+path.link.sesentaycinco {
+  stroke: orange;
+  opacity: 2.0;
+}
+
+path.link.cincuenta {
+  stroke: red;
+  opacity: 2.0;
+}
+
+circle {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: 0.5px;
+}
+
+text {
+  fill: #000;
+  font: 10px sans-serif;
+  pointer-events: none;
+}
+
+</style>
+    <title></title>
+  </head>
+  <body>
+    <font face="Arial"><br>
+      <a
+href="file:///Users/daniel/Documents/UniAndes/MBIT/SemestreV/VA/Tarea4/entrega/index.html"><input value="VOLVER A INICIO" type="button"></a>
+      <br><br>
+      El gráfico siguiente </font><font face="Arial"><font face="Arial">(Basic directional Force Layout Diagram) </font> muestra el top&nbsp; (por ciudad), de
+      origen-destino en vuelos domésticos, para los primeros ocho
+      meses de 2017. Se tomaron aquellos destinos con más de 50 vuelos
+      en lo corrido del año. <br>
+      <br>
+      Como se observa, Bogotá fue el aeropuerto con mayor cantidad de
+      vuelos domésticos, seguido de los aeropuertos de Rionegro, Villavicencio José María Córdova de
+      Rionegro. <br><br></font><i><font face="Arial">El tipo de gráfico es una adaptación del ejemplo de Mike Bostock's</font></i><i><span style="color: rgb(0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"></span></i><i><font size="-1"><span style="color: rgb(0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"> d<i>isponible en </i></span></font></i><i><a href="http://bl.ocks.org/mbostock/1153292" style="color: rgb(117, 107, 177); fill: rgb(117, 107, 177); text-decoration: none; font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;">Mobile Patent Suits</a></i><font size="-1"><i><span style="color: rgb(0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"><font size="-2"><span class="Apple-converted-space"></span></font></span></i><span style="color: rgb(0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"><i>.</i><br><br><i><b>Licence:&nbsp; </b></i></span></font><font size="-1"><span style="color: rgb(0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display: inline !important; float: none;"><i><span style="color: rgb(0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">Released under the<span class="Apple-converted-space">&nbsp;</span></span></i><a target="_blank" href="https://opensource.org/licenses/GPL-3.0" style="color: rgb(117, 107, 177); fill: rgb(117, 107, 177); text-decoration: none; font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px;">GNU General Public License, version 3</a><span style="color: rgb(0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: medium; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">.<br><br></span></span></font>
+    <table width="359" height="58" cellspacing="2" cellpadding="2" border="0"><tbody>
+<tr><td valign="top" bgcolor="Green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <br>
+          </td><td valign="top" align="right"><font face="Arial">Más de 100
+              vuelos<br>
+            </font></td></tr><tr><td valign="top" bgcolor="Blue"><br>
+          </td><td valign="top" align="right"><font face="Arial">Entre 81 y
+              100 vuelos<br>
+            </font></td></tr><tr><td valign="top" bgcolor="Orange"><br>
+          </td><td valign="top" align="right"><font face="Arial">Entre 66 y 80 vuelos<br>
+            </font></td></tr><tr><td valign="top" bgcolor="Red"><br>
+          </td><td valign="top" align="right"><font face="Arial">Entre 50 y 65 vuelos</font><br>
+          </td></tr>
+
+</tbody></table><br>
+    
+<script>
+
+// get the data
+d3.csv("topnacional.csv", function(error, links) {
+
+var nodes = {};
+
+// Compute the distinct nodes from the links.
+links.forEach(function(link) {
+    link.source = nodes[link.source] || 
+        (nodes[link.source] = {name: link.source});
+    link.target = nodes[link.target] || 
+        (nodes[link.target] = {name: link.target});
+    link.value = +link.value;
+});
+
+var width = 1960,
+    height = 800;
+
+var force = d3.layout.force()
+    .nodes(d3.values(nodes))
+    .links(links)
+    .size([width, height])
+    .linkDistance(400)
+    .charge(-300)
+    .on("tick", tick)
+    .start();
+
+// Set the range
+var  v = d3.scale.linear().range([ d3.min(links, function(d) { return d.value; }),  d3.max(links, function(d) { return d.value; })]);
+
+// Scale the range of the data
+v.domain([ d3.min(links, function(d) { return d.value; }), d3.max(links, function(d) { return d.value; })]);
+
+// asign a type per value to encode opacity
+links.forEach(function(link) {
+	if (v(link.value) <= 65) {
+		link.type = "cincuenta";
+	} else if (v(link.value) <= 80 && v(link.value) > 65 ) {
+		link.type = "sesentaycinco";
+	} else if (v(link.value) <= 100 && v(link.value) > 80) {
+		link.type = "ochenta";
+	} else if (v(link.value) > 100) {
+		link.type = "cien";
+	}
+});
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// build the arrow.
+svg.append("svg:defs").selectAll("marker")
+    .data(["end"])      // Different link/path types can be defined here
+  .enter().append("svg:marker")    // This section adds in the arrows
+    .attr("id", String)
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 15)
+    .attr("refY", -1.5)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+  .append("svg:path")
+    .attr("d", "M0,-5L10,0L0,5");
+
+// add the links and the arrows
+var path = svg.append("svg:g").selectAll("path")
+    .data(force.links())
+  .enter().append("svg:path")
+    .attr("class", function(d) { return "link " + d.type; })
+    .attr("marker-end", "url(#end)");
+
+// define the nodes
+var node = svg.selectAll(".node")
+    .data(force.nodes())
+  .enter().append("g")
+    .attr("class", "node")
+    .on("click", click)
+    .on("dblclick", dblclick)
+    .call(force.drag);
+
+// add the nodes
+node.append("circle")
+    .attr("r", 5);
+
+// add the text 
+node.append("text")
+    .attr("x", 12)
+    .attr("dy", ".35em")
+    .text(function(d) { return d.name; });
+
+// add the curvy lines
+function tick() {
+    path.attr("d", function(d) {
+        var dx = d.target.x - d.source.x,
+            dy = d.target.y - d.source.y,
+            dr = Math.sqrt(dx * dx + dy * dy);
+        return "M" + 
+            d.source.x + "," + 
+            d.source.y + "A" + 
+            dr + "," + dr + " 0 0,1 " + 
+            d.target.x + "," + 
+            d.target.y;
+    });
+
+    node
+        .attr("transform", function(d) { 
+		    return "translate(" + d.x + "," + d.y + ")"; });
+}
+
+// action to take on mouse click
+function click() {
+    d3.select(this).select("text").transition()
+        .duration(750)
+        .attr("x", 22)
+        .style("fill", "steelblue")
+        .style("stroke", "lightsteelblue")
+        .style("stroke-width", ".5px")
+        .style("font", "20px sans-serif");
+    d3.select(this).select("circle").transition()
+        .duration(750)
+        .attr("r", 16)
+        .style("fill", "lightsteelblue");
+}
+
+// action to take on mouse double click
+function dblclick() {
+    d3.select(this).select("circle").transition()
+        .duration(750)
+        .attr("r", 6)
+        .style("fill", "#ccc");
+    d3.select(this).select("text").transition()
+        .duration(750)
+        .attr("x", 12)
+        .style("stroke", "none")
+        .style("fill", "black")
+        .style("stroke", "none")
+        .style("font", "10px sans-serif");
+}
+
+});
+
+</script>
+
+
+</body></html>
