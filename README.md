@@ -20,3 +20,5 @@ En cuanto a los desplegado en el Tidy tree, se observa que Londres y Madrid son 
 Los tipo de gráficos son una adaptación de ejemplos de Mike Bostock's.
 
 Licence:  Released under the GNU General Public License, version 3. 
+
+Edison Suarez: Se podria explicar como seria la tecnica de visualizacion del how. En este se puede explicar el tipo de red y como en estos se hacen las marcas y canales.
